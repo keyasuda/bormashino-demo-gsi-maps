@@ -16,6 +16,7 @@ class App < Sinatra::Base
   get '/' do
     @loading = false
     if params[:q] && !@cache.get_item(params[:q])
+      # 地理院の地名検索API呼び出しをリクエスト
       GsiApi.address_search(params[:q], '/address_callback', params)
       @loading = true
     end
@@ -24,6 +25,7 @@ class App < Sinatra::Base
     erb :index
   end
 
+  # 地名検索APIの結果が返ってきたら呼び出されるエンドポイント
   post '/address_callback' do
     options = JSON.parse(params[:options])
     @cache.set_item(options['q'], params[:payload])
