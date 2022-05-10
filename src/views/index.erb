@@ -5,7 +5,7 @@
     <% @pois.each.with_index do |poi, i| %>
       <li
         data-geometry='<%= poi['geometry'].to_json %>'
-        <% if i == params['p'].to_i %>class="selected"<% end %>>
+        <% if i.to_s == params['p'] %>class="selected"<% end %>>
         <a href="/?q=<%= CGI.escape(params['q']) %>&p=<%= i %>">
           <%= poi['properties']['title'] %>
         </a>
