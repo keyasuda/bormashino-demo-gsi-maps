@@ -6,7 +6,7 @@ Bormaŝino を使用した地理院地図の表示&地名検索を行うデモ�
 
 ## デモ
 
-https://bormashino-app-template.vercel.app
+https://bormashino-demo-gsi-maps.vercel.app
 
 ## Prerequisites
 
