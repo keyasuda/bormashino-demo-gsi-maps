@@ -20,7 +20,12 @@ class App < Sinatra::Base
       GsiApi.address_search(params[:q], '/address_callback', params)
       @loading = true
     end
-    @pois = JSON.parse(@cache.get_item(params['q']) || '[]')
+    @pois =
+      if params['q']
+        JSON.parse(@cache.get_item(params['q']) || '[]')
+      else
+        []
+      end
 
     erb :index
   end

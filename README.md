@@ -1,8 +1,10 @@
-# bormashino-app-template
+# Bormaŝino GSI maps demo
 
-template repository of apps with Bormaŝino / SPAs written in Ruby
+Bormaŝino を使用した地理院地図の表示&地名検索を行うデモです。
 
-## Demo
+地図部分は Leaflet を使用し JavaScript で実装、地名検索部分は ruby.wasm を使用し Ruby で実装されています。
+
+## デモ
 
 https://bormashino-app-template.vercel.app
 
