@@ -3,6 +3,7 @@ require 'bormashino/local_storage'
 require 'json/pure'
 require_relative './gsi_api'
 
+# app root
 class App < Sinatra::Base
   set :protection, false
 
