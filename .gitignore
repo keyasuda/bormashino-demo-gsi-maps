@@ -45,6 +45,5 @@ config/environments/*.local.yml
 /dist
 /.parcel-cache
 /rubies
-/js/ruby-digest.js
 /wasi-vfs
 .vercel

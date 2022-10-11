@@ -1,11 +1,11 @@
 import { RubyApplication } from 'bormashino'
-import rubyDigest from './ruby-digest.js'
+import rubyWasm from 'url:../tmp/ruby.wasm'
 import { showMap } from './map.js'
 
 const main = async () => {
   showMap('map', document.querySelector('#bormashino-application'))
 
-  const vm = await RubyApplication.initVm('/ruby.' + rubyDigest + '.wasm', [
+  const vm = await RubyApplication.initVm(rubyWasm, [
     'ruby.wasm',
     '-I/stub',
     '-I/gem/lib',
