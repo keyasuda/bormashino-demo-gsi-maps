@@ -1,23 +1,19 @@
-<% if @loading%>
-  loading...
-<% else %>
-  <ol>
-    <% @pois.each.with_index do |poi, i| %>
-      <li
-        data-geometry='<%= poi['geometry'].to_json %>'
-        <% if i.to_s == params['p'] %>class="selected"<% end %>>
-        <a href="/?q=<%= CGI.escape(params['q']) %>&p=<%= i %>">
-          <%= poi['properties']['title'] %>
-        </a>
-      </li>
-    <% end %>
-  </ol>
+<ol>
+  <% @pois.each.with_index do |poi, i| %>
+    <li
+      data-geometry='<%= poi['geometry'].to_json %>'
+      <% if i.to_s == params['p'] %>class="selected"<% end %>>
+      <a href="/?q=<%= CGI.escape(params['q']) %>&p=<%= i %>">
+        <%= poi['properties']['title'] %>
+      </a>
+    </li>
+  <% end %>
+</ol>
 
-  <form action='/' method='get'>
-    <input type='text' name='q' value="<%= params['q'] %>">
-    <input type='submit' value='検索'>
-  </form>
-<% end %>
+<form action='/' method='get'>
+  <input type='text' name='q' value="<%= params['q'] %>">
+  <input type='submit' value='検索'>
+</form>
 
 <template class="bormashino-head">
   <title><%if params['q'] %><%= params['q'] %> - <% end %>Bormaŝino GSI maps demo</title>
