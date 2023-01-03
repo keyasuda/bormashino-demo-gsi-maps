@@ -18,8 +18,8 @@ class App < Sinatra::Base
     @loading = false
     if params[:q] && !@cache.get_item(params[:q])
       # 地理院の地名検索API呼び出しをリクエスト
-      GsiApi.address_search(params[:q], '/address_callback', params)
-      @loading = true
+      result = GsiApi.address_search(params[:q], '/address_callback', params)
+      @cache.set_item(params[:q], result.to_json)
     end
     @pois =
       if params['q']
