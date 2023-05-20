@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "buffer": "^6.0.3",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "parcel": "^2.8.3"
   },
   "source": "js/index.html",
